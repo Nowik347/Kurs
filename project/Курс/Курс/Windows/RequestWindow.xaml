@@ -1,0 +1,51 @@
+﻿<Window x:Class="Курс.Windows.RequestWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Курс.Windows"
+        mc:Ignorable="d"
+        Title="Создание/Изменение заявки"
+        
+        Height="500" Width="400"
+        
+        MinHeight="500" MinWidth="400"
+        
+        MaxHeight="500" MaxWidth="400"
+
+        Icon="/Images/icon.png"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel>
+            <StackPanel Margin="10">
+                <Label Content="Проблемные устройства"/>
+                <TextBox Name="TroubleDevicesBox" FontSize="14" TextWrapping="Wrap" Height="25"/>
+            </StackPanel>
+
+            <StackPanel Margin="10 0 10 0">
+                <Label Content="Описание проблемы"/>
+                <TextBox Name="ProblemDescriptionBox" FontSize="14" TextWrapping="Wrap" Height="100" ScrollViewer.VerticalScrollBarVisibility="Visible"/>
+            </StackPanel>
+            
+            <StackPanel Margin="10 10 10 0" Name="DatePanel">
+                <Label Content="Дата создания"/>
+                <Label Name="CreationDateLabel" FontSize="14"/>
+            </StackPanel>
+
+            <StackPanel Margin="10 10 10 0" Name="LastDatePanel">
+                <Label Content="Дата последнего изменения"/>
+                <Label Name="LastChangeDateLabel" FontSize="14"/>
+            </StackPanel>
+
+            <StackPanel Margin="10" Name="StatusPanel">
+                <Label Content="Статус"/>
+                <ComboBox Name="StatusBox" FontSize="14"/>
+            </StackPanel>
+
+            <DockPanel Margin="10 20 10 15">
+                <Button Name="CancelButton" FontSize="14" Content="Отмена" Margin="40 0 0 0" Width="90" Height="30" Click="CancelButton_Click"></Button>
+                <Button Name="SaveButton" FontSize="14" Content="Сохранить" Margin="0 0 40 0" Width="90" Height="30" HorizontalAlignment="Right" Click="SaveButton_Click"/>
+            </DockPanel> 
+        </StackPanel>
+    </Grid>
+</Window>

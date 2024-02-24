@@ -1,0 +1,119 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Курс"
+        xmlns:Infrastructure="clr-namespace:Курс.Infrastructure" xmlns:Models="clr-namespace:Курс.Models" x:Name="window" x:Class="Курс.MainWindow"
+        mc:Ignorable="d"
+        Title="Главное меню"
+        Height="750" Width="1200"
+        
+        MinHeight="750" MinWidth="1200"
+        
+        MaxHeight="750" MaxWidth="1200"
+        
+        Icon="/Images/icon.png"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <Infrastructure:StateConverter x:Key="StateConverter"/>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.034*"/>
+            <RowDefinition/>
+            <RowDefinition Height="0.1*"/>
+        </Grid.RowDefinitions>
+
+        <Image Source="/Images/logo.png" Grid.Row="1" Grid.RowSpan="2" Opacity="0.2"/>
+
+        <Menu>
+            <MenuItem Width="55" Header="Заявки...">
+                <MenuItem x:Name="AddNewRequestButton" Header="Новая заявка..." Click="AddNewRequestButton_Click"/>
+                <MenuItem x:Name="OpenRequestButton" Header="Открыть заявку..." Click="OpenRequestButton_Click"/>
+                <MenuItem x:Name="DeleteRequestButton" Header="Удалить заявку..." Click="DeleteRequestButton_Click"/>
+            </MenuItem>
+            <MenuItem Width="10" IsEnabled="False" Header="|"/>
+            <MenuItem x:Name="UpdateTableButton" Width="65" Header="Обновить" Click="UpdateTableButton_Click"/>
+            <MenuItem Width="10" IsEnabled="False" Header="|"/>
+            <MenuItem x:Name="AboutButton" Width="90" Header="О программе..." Click="AboutButton_Click"/>
+        </Menu>
+
+        <Menu HorizontalAlignment="Right">
+            <MenuItem x:Name="CurrentUserLabel" Header="Роль:Имя">
+                <MenuItem x:Name="EditUsersButton" Header="Настроить права пользователей" Click="EditUsersButton_Click"/>
+                <MenuItem x:Name="ExitButton" Header="Выйти" Click="ExitButton_Click"/>
+            </MenuItem>
+        </Menu>
+
+        <StackPanel x:Name="ColumnHeadersPanel" Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Top">
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Width="77" Text="Номер заявки" TextWrapping="Wrap" TextAlignment="Center"/>
+            <Rectangle Fill="Black" Width="1"/>
+            <TextBlock Width="100" Text="Дата создания" VerticalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="10" FontSize="14"/>
+            <Rectangle Fill="Black" Width="1"/>
+            <TextBlock Width="105" Text="Дата изменения" VerticalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="10" FontSize="14"/>
+            <Rectangle Fill="Black" Width="1"/>
+            <TextBlock Width="200" Text="Проблемные устройства" VerticalAlignment="Center" TextAlignment="Left" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="10" FontSize="14"/>
+            <Rectangle Fill="Black" Width="1"/>
+            <TextBlock Width="390" Text="Описание проблемы" VerticalAlignment="Center" TextAlignment="Left" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="10" FontSize="14"/>
+            <Rectangle Fill="Black" Width="1"/>
+            <TextBlock Text="Статус" VerticalAlignment="Center" TextAlignment="Left" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="10" FontSize="14"/>
+        </StackPanel>
+
+        <ListView Margin="0 22 0 0" Grid.Row="0" Grid.RowSpan="2" x:Name="UsersList" Background="{x:Null}" Visibility="Collapsed">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel HorizontalAlignment="Left" Orientation="Vertical"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <DockPanel Width="1170">
+                        <TextBlock Width="80" Text="{Binding UserId}" VerticalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Center" FontSize="14"/>
+                        <Rectangle Fill="Black" Width="1"/>
+                        <TextBlock Width="250" Text="{Binding Name}" VerticalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="10" FontSize="14"/>
+                        <Rectangle Fill="Black" Width="1"/>
+                        <TextBlock Width="250" Text="{Binding Surname, TargetNullValue='Н/Д'}" VerticalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="10" FontSize="14"/>
+                        <Rectangle Fill="Black" Width="1"/>
+                        <TextBlock Width="250" Text="{Binding Login}" VerticalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="10" FontSize="14"/>
+                        <Rectangle Fill="Black" Width="1"/>
+                        <ComboBox Width="200" SelectedIndex="{Binding Role, Mode=TwoWay}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10" FontSize="14">
+                            <ComboBoxItem Content="Оператор"/>
+                            <ComboBoxItem Content="Пользователь"/>
+                            <ComboBoxItem Content="Администратор"/>
+                        </ComboBox>
+                    </DockPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <ListView Margin="0 40 0 0" Grid.Row="1" x:Name="RequestsList" Background="{x:Null}" MouseDoubleClick="RequestsList_MouseDoubleClick">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel HorizontalAlignment="Left" Orientation="Vertical"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <DockPanel Width="1170">
+                        <TextBlock Width="70" Text="{Binding RequestId}" VerticalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Center" FontSize="14"/>
+                        <Rectangle Fill="Black" Width="1"/>
+                        <TextBlock Width="100" Text="{Binding CreationDate, StringFormat=\{0:d\}}" VerticalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="10" FontSize="14"/>
+                        <Rectangle Fill="Black" Width="1"/>
+                        <TextBlock Width="105" Text="{Binding LastChangeDate, StringFormat=\{0:d\}}" VerticalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="10" FontSize="14"/>
+                        <Rectangle Fill="Black" Width="1"/>
+                        <TextBlock Width="200" Text="{Binding TroubleDevices}" VerticalAlignment="Center" TextAlignment="Left" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="10" FontSize="14"/>
+                        <Rectangle Fill="Black" Width="1"/>
+                        <TextBlock Width="390" Text="{Binding ProblemDescription}" VerticalAlignment="Center" TextAlignment="Left" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="10" FontSize="14"/>
+                        <Rectangle Fill="Black" Width="1"/>
+                        <TextBlock DockPanel.Dock="Right" Text="{Binding Status, Converter={StaticResource StateConverter}}" VerticalAlignment="Center" TextAlignment="Left" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="10" FontSize="14"/>
+                    </DockPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Window>
