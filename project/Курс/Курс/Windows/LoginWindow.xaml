@@ -40,18 +40,18 @@
         </StackPanel>
 
         <StackPanel Grid.Row="2">
-            <StackPanel Name="CaptchaPanel" Visibility="Hidden">
-                <TextBlock Height="20" Name="CaptchaImage" Margin="10 10 10 0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">
+            <StackPanel Name="CaptchaPanel" Visibility="Hidden" HorizontalAlignment="Center">
+                <TextBlock Height="20" FontSize="18" Name="CaptchaImage" Margin="10 10 10 0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" RenderTransformOrigin="0.5,0.5">
                     <TextBlock.Effect>
-                        <BlurEffect RenderingBias="Quality" KernelType="Box" Radius="0.5"/>
+                        <BlurEffect RenderingBias="Quality" KernelType="Box" Radius="1.9"/>
                     </TextBlock.Effect>
                 </TextBlock>
                 <TextBox Width="150" Text="Пройдите CAPTCHA" Opacity="0.5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10 10 10 10" Name="CaptchaBox" GotFocus="CaptchaBox_GotFocus" LostFocus="CaptchaBox_LostFocus"/>
             </StackPanel>
 
             <DockPanel>
-                <Button Name="RegisterButton" FontSize="14" Content="Регистрация" Margin="40 0 0 0" Width="90" Height="30" Click="RegisterButton_Click"></Button>
-                <Button Name="LoginButton" FontSize="14" Content="Войти" Margin="0 0 40 0" Width="90" Height="30" HorizontalAlignment="Right" Click="LoginButton_Click"/>
+                <Button Name="RegisterButton" FontSize="14" Content="Регистрация" Margin="40 0 0 0" Width="100" Height="30" Click="RegisterButton_Click"></Button>
+                <Button Name="LoginButton" FontSize="14" Content="Войти" Margin="0 0 40 0" Width="100" Height="30" HorizontalAlignment="Right" Click="LoginButton_Click"/>
             </DockPanel>
         </StackPanel>
     </Grid>

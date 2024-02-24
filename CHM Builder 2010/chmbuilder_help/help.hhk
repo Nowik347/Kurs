@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Cherednichenko CHM Builder">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<UL>
+
+  <LI> <OBJECT type="text/sitemap">
+         <param name="Name" value="Введение">
+         <param name="Local" value="C:\Users\PUBG\Desktop\Леша\Курс\CHM Builder 2010\chmbuilder_help\intro.html">
+       </OBJECT>
+
+  <LI> <OBJECT type="text/sitemap">
+         <param name="Name" value="Лицензия">
+         <param name="Local" value="C:\Users\PUBG\Desktop\Леша\Курс\CHM Builder 2010\chmbuilder_help\license.html">
+       </OBJECT>
+
+  <LI> <OBJECT type="text/sitemap">
+         <param name="Name" value="Вход в систему">
+         <param name="Local" value="steps_login.html">
+       </OBJECT>
+
+  <LI> <OBJECT type="text/sitemap">
+         <param name="Name" value="Регистрация">
+         <param name="Local" value="C:\Users\PUBG\Desktop\Леша\Курс\CHM Builder 2010\chmbuilder_help\registration.html">
+       </OBJECT>
+
+  <LI> <OBJECT type="text/sitemap">
+         <param name="Name" value="Авторизация">
+         <param name="Local" value="C:\Users\PUBG\Desktop\Леша\Курс\CHM Builder 2010\chmbuilder_help\authorization.html">
+       </OBJECT>
+
+  <LI> <OBJECT type="text/sitemap">
+         <param name="Name" value="Использование системы">
+         <param name="Local" value="C:\Users\PUBG\Desktop\Леша\Курс\CHM Builder 2010\chmbuilder_help\steps_working.html">
+       </OBJECT>
+
+  <LI> <OBJECT type="text/sitemap">
+         <param name="Name" value="Создание заявки">
+         <param name="Local" value="C:\Users\PUBG\Desktop\Леша\Курс\CHM Builder 2010\chmbuilder_help\creating_request.html">
+       </OBJECT>
+
+  <LI> <OBJECT type="text/sitemap">
+         <param name="Name" value="Изменение заявки">
+         <param name="Local" value="C:\Users\PUBG\Desktop\Леша\Курс\CHM Builder 2010\chmbuilder_help\changing_request.html">
+       </OBJECT>
+
+  <LI> <OBJECT type="text/sitemap">
+         <param name="Name" value="Удаление заявки">
+         <param name="Local" value="C:\Users\PUBG\Desktop\Леша\Курс\CHM Builder 2010\chmbuilder_help\deleting_request.html">
+       </OBJECT>
+
+  <LI> <OBJECT type="text/sitemap">
+         <param name="Name" value="Настройка прав пользователей">
+         <param name="Local" value="C:\Users\PUBG\Desktop\Леша\Курс\CHM Builder 2010\chmbuilder_help\users_roles_changing.html">
+       </OBJECT>
+
+</UL>
+
+</BODY></HTML>

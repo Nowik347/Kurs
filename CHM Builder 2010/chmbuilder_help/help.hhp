@@ -1,0 +1,12 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=help.chm
+Contents file=help.hhc
+Default topic=C:\Users\PUBG\Desktop\Леша\Курс\CHM Builder 2010\chmbuilder_help\intro.html
+Display compile progress=No
+Full-text search=Yes
+Index file=help.hhk
+Language=0x419 Russian
+Title=Справка
+
+[INFOTYPES]

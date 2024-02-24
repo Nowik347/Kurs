@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
+﻿using System.Configuration;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Курс.Models
 {
@@ -12,8 +9,7 @@ namespace Курс.Models
         {
         }
 
-        public ComputerRepairShopContext(DbContextOptions<ComputerRepairShopContext> options)
-            : base(options)
+        public ComputerRepairShopContext(DbContextOptions<ComputerRepairShopContext> options) : base(options)
         {
         }
 

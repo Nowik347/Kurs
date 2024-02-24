@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Interop;
 using Курс.Infrastructure;
 using Курс.Models;
 using Курс.Windows;
@@ -16,18 +19,68 @@ namespace Курс
     {
         bool verify = true;
         int verifyCheck = 0;
+
+        #region Win32 API Stuff
+
+        // Define the Win32 API methods we are going to use
+        [DllImport("user32.dll")]
+        private static extern IntPtr GetSystemMenu(IntPtr hWnd, bool bRevert);
+
+        [DllImport("user32.dll")]
+        private static extern bool InsertMenu(IntPtr hMenu, Int32 wPosition, Int32 wFlags, Int32 wIDNewItem, string lpNewItem);
+
+        /// Define our Constants we will use
+        public const Int32 WM_SYSCOMMAND = 0x112;
+        public const Int32 MF_SEPARATOR = 0x800;
+        public const Int32 MF_BYPOSITION = 0x400;
+        public const Int32 MF_STRING = 0x0;
+
+        #endregion
+
+        // The constants we'll use to identify our custom system menu items
+        public const Int32 _AboutSysMenuID = 1001;
+
+        public IntPtr Handle
+        {
+            get
+            {
+                return new WindowInteropHelper(this).Handle;
+            }
+        }
+
+        private static IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
+        {
+            // Check if a System Command has been executed
+            if (msg == WM_SYSCOMMAND)
+            {
+                if (wParam.ToInt32() == _AboutSysMenuID)
+                {
+                    System.Windows.Forms.Help.ShowHelp(null, @"help.chm");
+                    handled = true;
+                }
+            }
+
+            return IntPtr.Zero;
+        }
+
         public LoginWindow()
         {
             InitializeComponent();
 
-            // REMOVE THIS
-            //using (ComputerRepairShopContext db = new ComputerRepairShopContext())
-            //{
-            //    User? user = db.Users.Where(u => u.Login == "Admin" && u.Password == "admin").FirstOrDefault() as User;
+            this.Loaded += new RoutedEventHandler(Window_Loaded);
+        }
 
-            //    new MainWindow(user).Show();
-            //    this.Close();
-            //}
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            /// Get the Handle for the Forms System Menu
+            IntPtr systemMenuHandle = GetSystemMenu(this.Handle, false);
+
+            /// Create our new System Menu items just before the Close menu item
+            InsertMenu(systemMenuHandle, 7, MF_BYPOSITION, _AboutSysMenuID, "О программе...");
+
+            // Attach our WndProc handler to this Window
+            HwndSource source = HwndSource.FromHwnd(this.Handle);
+            source.AddHook(new HwndSourceHook(WndProc));
         }
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)

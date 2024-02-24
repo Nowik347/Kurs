@@ -14,7 +14,7 @@ namespace Курс.Infrastructure
 
             Random rand = new Random();
              
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 2; i++)
             {
                 captcha += (char)rand.Next('A', 'Z' + 1) + rand.NextInt64(1, 100).ToString();
             }

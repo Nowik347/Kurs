@@ -18,15 +18,15 @@
     
     <Grid>
         <StackPanel Name="CaptchaPanel" Visibility="Visible">
-            <TextBlock Height="20" Name="CaptchaImage" Margin="10 20 10 0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">
+            <TextBlock Height="20" FontSize="18" Name="CaptchaImage" Margin="10 20 10 0" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">
                 <TextBlock.Effect>
-                    <BlurEffect RenderingBias="Quality" KernelType="Box" Radius="0.5"/>
+                    <BlurEffect RenderingBias="Quality" KernelType="Box" Radius="1.9"/>
                 </TextBlock.Effect>
             </TextBlock>
 
             <TextBox Width="150" FontSize="14" Text="Пройдите CAPTCHA" Opacity="0.5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10 10 10 10" Name="CaptchaBox" GotFocus="CaptchaBox_GotFocus" LostFocus="CaptchaBox_LostFocus"/>
 
-            <Button Name="CheckCAPTCHAButton" FontSize="14" Content="Проверить" Margin="5" Width="90" Height="30" Click="CheckCAPTCHAButton_Click"></Button>
+            <Button HorizontalAlignment="Center" Name="CheckCAPTCHAButton" FontSize="14" Content="Проверить" Margin="5" Width="90" Height="30" Click="CheckCAPTCHAButton_Click"></Button>
         </StackPanel>
     </Grid>
 </Window>

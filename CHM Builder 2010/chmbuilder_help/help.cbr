@@ -1,0 +1,48 @@
+[hhp]
+Compatibility=1.1 or later
+Compiled file=help.chm
+Contents file=help.hhc
+Default topic=C:\Users\PUBG\Desktop\Леша\Курс\CHM Builder 2010\chmbuilder_help\intro.html
+Display compile progress=No
+Index file=help.hhk
+Language=0x419 Russian
+Title=Справка
+[/hhp]
+[builder]
+Page Count=9
+Address Count=9
+Index Count=9
+Start Index=0
+[/builder]
+[contents]
+pt0=Введение
+pa0=C:\Users\PUBG\Desktop\Леша\Курс\CHM Builder 2010\chmbuilder_help\intro.html
+pt1=Лицензия
+pa1=C:\Users\PUBG\Desktop\Леша\Курс\CHM Builder 2010\chmbuilder_help\license.html
+pt2=Вход в систему
+pa2=steps_login.html
+pt3=  Регистрация
+pa3=C:\Users\PUBG\Desktop\Леша\Курс\CHM Builder 2010\chmbuilder_help\registration.html
+pt4=  Авторизация
+pa4=C:\Users\PUBG\Desktop\Леша\Курс\CHM Builder 2010\chmbuilder_help\authorization.html
+pt5=Использование системы
+pa5=C:\Users\PUBG\Desktop\Леша\Курс\CHM Builder 2010\chmbuilder_help\steps_working.html
+pt6=  Создание заявки
+pa6=C:\Users\PUBG\Desktop\Леша\Курс\CHM Builder 2010\chmbuilder_help\creating_request.html
+pt7=  Изменение заявки
+pa7=C:\Users\PUBG\Desktop\Леша\Курс\CHM Builder 2010\chmbuilder_help\changing_request.html
+pt8=  Удаление заявки
+pa8=C:\Users\PUBG\Desktop\Леша\Курс\CHM Builder 2010\chmbuilder_help\deleting_request.html
+pt9=  Настройка прав пользователей
+pa9=C:\Users\PUBG\Desktop\Леша\Курс\CHM Builder 2010\chmbuilder_help\users_roles_changing.html
+pi0=Введение
+pi1=Лицензия
+pi2=Вход в систему
+pi3=Регистрация
+pi4=Авторизация
+pi5=Использование системы
+pi6=Создание заявки
+pi7=Изменение заявки
+pi8=Удаление заявки
+pi9=Настройка прав пользователей
+[/contents]
