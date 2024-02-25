@@ -150,7 +150,7 @@ namespace Курс.Windows
 
             if (errors.Length > 0)
             {
-                MessageBox.Show(errors.ToString());
+                MessageBox.Show(errors.ToString(), "Ошибка!");
                 return;
             }
 
@@ -170,7 +170,7 @@ namespace Курс.Windows
                         db.Requests.Update(currentRequest);
                         db.SaveChanges();
 
-                        MessageBox.Show("Заявка успешно изменена!");
+                        MessageBox.Show("Заявка успешно изменена!", "Заявка");
 
                         this.Close();
                     }
@@ -185,14 +185,14 @@ namespace Курс.Windows
                         db.Requests.Add(currentRequest);
                         db.SaveChanges();
 
-                        MessageBox.Show("Заявка успешно добавлена!");
+                        MessageBox.Show("Заявка успешно добавлена!", "Заявка");
 
                         this.Close();
                     }     
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.InnerException.ToString());
+                    MessageBox.Show(ex.InnerException.ToString(), "Ошибка!");
                 }
             }
         }

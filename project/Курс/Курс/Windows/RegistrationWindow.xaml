@@ -29,32 +29,32 @@
             <Label Content="Регистрация" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
 
             <StackPanel Margin="10 0 10 10" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Label Content="Имя" Margin="0 0 7 0"/>
+                <Label Content="Имя" Margin="0 0 15 0" FontSize="14" />
                 <TextBox Name="NameBox" Width="225" FontSize="14"/>
             </StackPanel>
 
             <StackPanel Margin="0 0 20 10" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Label Content="Фамилия"/>
+                <Label Content="Фамилия" FontSize="14" Margin="0 0 5 0"/>
                 <TextBox Name="SurnameBox" Width="225" FontSize="14"/>
             </StackPanel>
 
             <StackPanel Margin="0 0 0 10" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Label Content="Email"/>
+                <Label Content="Email" FontSize="14" Margin="0 0 10 0"/>
                 <TextBox Name="EmailBox" Width="225" FontSize="14"/>
             </StackPanel>
 
             <StackPanel Margin="0 0 4 10" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Label Content="Логин"/>
+                <Label Content="Логин" FontSize="14" Margin="0 0 7 0"/>
                 <TextBox Name="LoginBox" Width="225" FontSize="14"/>
             </StackPanel>
 
             <StackPanel Margin="0 0 11 10" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Label Content="Пароль"/>
+                <Label Content="Пароль" FontSize="14" Margin="0 0 7 0"/>
                 <PasswordBox Name="PasswordBox" Width="225" FontSize="14"/>
             </StackPanel>
         </StackPanel>
 
-        <StackPanel Grid.Row="2">
+        <StackPanel Grid.Row="2" Margin="0 15 0 0">
             <DockPanel>
                 <Button Name="CancelButton" Content="Отмена" FontSize="14" Margin="40 0 0 0" Width="90" Height="30" Click="CancelButton_Click"></Button>
                 <Button Name="ConfirmRegisterButton" Content="Продолжить" FontSize="14" Margin="0 0 40 0" Width="90" Height="30" HorizontalAlignment="Right" Click="ConfirmRegisterButton_Click"/>

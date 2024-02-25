@@ -106,7 +106,7 @@ namespace Курс
                 }
                 else
                 {
-                    MessageBox.Show("Неуспешная авторизация");
+                    MessageBox.Show("Неуспешная авторизация", "Авторизация");
                     verifyCheck += 1;
                     // captcha view
                     CaptchaPanel.Visibility = Visibility.Visible;

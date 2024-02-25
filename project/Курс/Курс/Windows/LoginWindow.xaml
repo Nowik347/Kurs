@@ -29,12 +29,12 @@
             <Label Content="&quot;Заявки&quot;" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
 
             <StackPanel Margin="10 10 10 0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Label Content="Логин" Margin="0 0 7 0"/>
+                <Label Content="Логин" Margin="0 0 7 0" FontSize="14"/>
                 <TextBox Name="LoginBox" Width="225" FontSize="14"/>
             </StackPanel>
 
             <StackPanel Margin="10" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Label Content="Пароль"/>
+                <Label Content="Пароль" FontSize="14"/>
                 <PasswordBox Name="PasswordBox" Width="225" FontSize="14"/>
             </StackPanel>
         </StackPanel>
@@ -46,10 +46,10 @@
                         <BlurEffect RenderingBias="Quality" KernelType="Box" Radius="1.9"/>
                     </TextBlock.Effect>
                 </TextBlock>
-                <TextBox Width="150" Text="Пройдите CAPTCHA" Opacity="0.5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10 10 10 10" Name="CaptchaBox" GotFocus="CaptchaBox_GotFocus" LostFocus="CaptchaBox_LostFocus"/>
+                <TextBox Width="150" FontSize="14" Text="Пройдите CAPTCHA" Opacity="0.5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10 10 10 10" Name="CaptchaBox" GotFocus="CaptchaBox_GotFocus" LostFocus="CaptchaBox_LostFocus"/>
             </StackPanel>
 
-            <DockPanel>
+            <DockPanel Margin="5">
                 <Button Name="RegisterButton" FontSize="14" Content="Регистрация" Margin="40 0 0 0" Width="100" Height="30" Click="RegisterButton_Click"></Button>
                 <Button Name="LoginButton" FontSize="14" Content="Войти" Margin="0 0 40 0" Width="100" Height="30" HorizontalAlignment="Right" Click="LoginButton_Click"/>
             </DockPanel>

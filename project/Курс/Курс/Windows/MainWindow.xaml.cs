@@ -118,6 +118,7 @@ namespace Курс
                 }
 
                 RequestsList.ItemsSource = db.Requests.Where(u => u.UserId == currentUser.UserId).ToList();
+
                 return;
             }
         }

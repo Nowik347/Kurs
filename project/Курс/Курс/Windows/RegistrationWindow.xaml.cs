@@ -112,7 +112,7 @@ namespace Курс.Windows
                 //
                 if (errors.Length > 0)
                 {
-                    MessageBox.Show(errors.ToString());
+                    MessageBox.Show(errors.ToString(), "Ошибка!");
                     return;
                 }
 
@@ -137,7 +137,7 @@ namespace Курс.Windows
                     db.Users.Add(user);
                     db.SaveChanges();
 
-                    MessageBox.Show("Успешная регистрация!");
+                    MessageBox.Show("Успешная регистрация!", "Регистрация");
 
                     new LoginWindow().Show();
                     this.Close();
